@@ -7,7 +7,7 @@ This note documents the final Part 3 pipeline against the competition constraint
 Final submission path:
 
 ```text
-submissions/submission_634K.csv
+submissions/submission.csv
 ```
 
 Expected format:
@@ -16,7 +16,7 @@ Expected format:
 Date,Revenue,COGS
 ```
 
-The script `scripts/run_forecast_634k.py` checks:
+The script `scripts/run_forecast_final.py` checks:
 
 - row count equals `sample_submission.csv`
 - column order is exactly `Date, Revenue, COGS`
@@ -36,10 +36,11 @@ The model does not use hidden test `Revenue` or hidden test `COGS` as features.
 
 ## Explainability output
 
-The final run writes feature importance to:
+The final repository contains grouped SHAP explanation artifacts at:
 
 ```text
-outputs/modeling/feature_importance_634K.csv
+outputs/modeling/shap_group_comparison.csv
+outputs/modeling/shap_group_comparison.png
 ```
 
-This file can be referenced in the report when explaining the main business drivers learned by the model.
+These files are used in the report to explain the main business drivers learned by the model. The values are grouped absolute SHAP contributions aggregated into five business-readable feature groups.

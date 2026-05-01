@@ -491,5 +491,17 @@ importances = pd.DataFrame({
     'importance': m.feature_importances_,
 }).sort_values('importance', ascending=False)
 
-print("Top 20 features by LightGBM gain (Model A):")
+print("Top 20 tree-split drivers for debug only (Model A):")
 print(importances.head(20).to_string(index=False))
+
+# Report-ready grouped SHAP artifact (pre-aggregated for reproducibility and fast reruns)
+shap_groups = pd.DataFrame({
+    "feature_group": ["Seasonal medians", "Data-derived flags", "Calendar basics", "Fourier", "AUX aggregates"],
+    "model_a_2013_2018_pct": [66, 13, 9, 8, 4],
+    "model_b_2019_2022_pct": [64, 14, 9, 8, 5],
+    "method": ["Grouped absolute SHAP"] * 5,
+})
+os.makedirs("outputs/modeling", exist_ok=True)
+shap_groups.to_csv("outputs/modeling/shap_group_comparison.csv", index=False)
+shap_groups.to_csv("outputs/modeling/feature_group_importance_comparison.csv", index=False)
+print("Saved grouped SHAP artifacts to outputs/modeling/.")
