@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""Regenerate the precomputed feature-group importance figure from CSV values.
+"""Regenerate the precomputed grouped SHAP figure from CSV values.
 
 This script is intentionally lightweight. It does not retrain the forecasting model;
-it only recreates the report-ready explainability plot from the saved importance table.
+it only recreates the report-ready explainability plot from the saved grouped SHAP table.
 """
 import argparse
 import os
@@ -13,8 +13,8 @@ import matplotlib.pyplot as plt
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--csv", default="outputs/modeling/feature_group_importance_comparison.csv")
-    parser.add_argument("--out", default="outputs/modeling/feature_group_importance_comparison.png")
+    parser.add_argument("--csv", default="outputs/modeling/shap_group_comparison.csv")
+    parser.add_argument("--out", default="outputs/modeling/shap_group_comparison.png")
     args = parser.parse_args()
 
     df = pd.read_csv(args.csv)
@@ -30,8 +30,8 @@ def main():
     ax.set_yticks(y)
     ax.set_yticklabels(labels, fontsize=10)
     ax.invert_yaxis()
-    ax.set_xlabel("% Total feature importance (LightGBM gain)", fontsize=11)
-    ax.set_title("Feature Group Importance: A+B Regime Comparison (33 features, compliant)", fontsize=13, weight="bold")
+    ax.set_xlabel("% Total |SHAP| contribution", fontsize=11)
+    ax.set_title("Grouped SHAP: A+B Regime Comparison (33 features, 5 groups)", fontsize=13, weight="bold")
     ax.grid(axis="x", alpha=0.25)
     ax.legend(loc="lower right", frameon=False)
     maxv = max(float(np.max(a)), float(np.max(b)))

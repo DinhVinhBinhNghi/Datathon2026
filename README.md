@@ -8,7 +8,7 @@ Repository for the Datathon 2026 Round 1 submission. It contains the EDA/storyte
 - `src/`: reusable code for data loading, validation, feature engineering, EDA, and modeling.
 - `scripts/`: command-line scripts to reproduce figures and the final forecasting submission.
 - `outputs/figures/main/`: final EDA figures used in the report.
-- `outputs/modeling/`: model explanation outputs such as feature importance.
+- `outputs/modeling/`: model explanation outputs such as grouped SHAP importance.
 - `submissions/submission.csv`: final Kaggle submission file.
 - `data/raw/`: local copy of the official competition files for reproducibility. This folder is ignored by Git to avoid pushing data accidentally.
 
@@ -61,10 +61,19 @@ This writes:
 
 ```text
 submissions/submission.csv
-outputs/modeling/feature_importance_final.csv
+outputs/modeling/shap_group_comparison.csv
+outputs/modeling/shap_group_comparison.png
 ```
 
 The script validates that the output has the required columns, row count, date order, non-null predictions, and non-negative predictions.
+
+## Reproduce model explainability figure
+
+```bash
+python scripts/run_feature_importance_figure.py --csv outputs/modeling/shap_group_comparison.csv --out outputs/modeling/shap_group_comparison.png
+```
+
+This lightweight script recreates the report-ready grouped SHAP figure from the saved table; it does not retrain the full model.
 
 ## Reproduce EDA figures
 
@@ -80,7 +89,7 @@ outputs/figures/main/
 
 ## Final forecasting model summary
 
-The final model is an ensemble of LightGBM, XGBoost, and CatBoost regressors. It uses calendar seasonality, deterministic campaign/holiday flags, historical seasonal profiles, and auxiliary operational signals from inventory, web traffic, returns, and shipments. Revenue and COGS are modeled separately through revenue prediction, margin estimation, and targeted COGS post-processing based only on historical training data patterns.
+The final model is an ensemble of LightGBM, XGBoost, and CatBoost regressors. It uses 33 features grouped into calendar basics, data-derived promotion flags, Fourier seasonality, seasonal profiles/medians, and auxiliary operational signals from inventory, web traffic, returns, and shipments. Revenue prediction combines 58% model signal with 42% seasonal profiles. COGS is modeled through margin estimation and targeted COGS post-processing based only on historical training data patterns.
 
 ## Leakage and reproducibility notes
 
