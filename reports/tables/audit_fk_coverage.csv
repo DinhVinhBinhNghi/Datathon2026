@@ -1,0 +1,13 @@
+child_key,parent_key,child_non_null_rows,missing_fk_rows,coverage_rate,status,child_table,parent_table
+customer_id,customer_id,646945,0,1.0,PASS,orders,customers
+zip,zip,646945,0,1.0,PASS,orders,geography
+order_id,order_id,714669,0,1.0,PASS,order_items,orders
+product_id,product_id,714669,0,1.0,PASS,order_items,products
+order_id,order_id,646945,0,1.0,PASS,payments,orders
+order_id,order_id,566067,0,1.0,PASS,shipments,orders
+order_id,order_id,39939,0,1.0,PASS,returns,orders
+product_id,product_id,39939,0,1.0,PASS,returns,products
+order_id,order_id,113551,0,1.0,PASS,reviews,orders
+product_id,product_id,113551,0,1.0,PASS,reviews,products
+customer_id,customer_id,113551,0,1.0,PASS,reviews,customers
+product_id,product_id,60247,0,1.0,PASS,inventory,products

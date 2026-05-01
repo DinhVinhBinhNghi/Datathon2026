@@ -1,0 +1,14 @@
+table,key_cols,rows,distinct_keys,duplicate_key_rows,null_key_rows,expected_unique,status
+products,product_id,2412,2412,0,0,True,PASS
+customers,customer_id,121930,121930,0,0,True,PASS
+promotions,promo_id,50,50,0,0,True,PASS
+geography,zip,39948,39948,0,0,True,PASS
+orders,order_id,646945,646945,0,0,True,PASS
+order_items,"order_id, product_id",714669,714653,16,0,False,PASS
+payments,order_id,646945,646945,0,0,True,PASS
+shipments,order_id,566067,566067,0,0,True,PASS
+returns,return_id,39939,39939,0,0,True,PASS
+reviews,review_id,113551,113551,0,0,True,PASS
+sales,Date,3833,3833,0,0,True,PASS
+inventory,"snapshot_date, product_id",60247,60247,0,0,True,PASS
+web_traffic,"date, traffic_source",3652,3652,0,0,True,PASS

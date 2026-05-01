@@ -1,0 +1,17 @@
+{
+  "a1_avg_daily_change_pct": -41.473474651587516,
+  "a1_peak_change_pct": -46.832211929167485,
+  "a1_gm_change_pp": -1.3220510478075793,
+  "a1_negative_odd_august_count": 5,
+  "a2_active_customers_change_pct": -38.75388889887964,
+  "a2_orders_per_active_customer_change_pct": -24.062081782300172,
+  "a2_repeat_rate_change_pp": -15.131198718601786,
+  "a2_aov_change_pct": 24.331895798927494,
+  "a3_promo_revenue_share_post_pct": 32.03589337724267,
+  "a3_promo_margin_gap_pp": -18.98971178214083,
+  "a3_promo_90d_repeat_gap_pp": -1.685095745665055,
+  "a5_refill_sku_count": 141,
+  "a5_clear_sku_count": 293,
+  "a5_top_bucket": "Chẩn đoán từng SKU",
+  "a5_top_bucket_monthly_revenue_mn": 44.3237692898276
+}

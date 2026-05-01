@@ -1,0 +1,20 @@
+# Local raw/intermediate data. Keep these locally; do not push large CSVs unless required.
+data/
+!data/.gitkeep
+!data/raw/.gitkeep
+
+# Python / notebooks
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+*.log
+
+# Virtual environments / secrets
+venv/
+.venv/
+.env
+
+# Temporary outputs
+outputs/temp/
+catboost_info/

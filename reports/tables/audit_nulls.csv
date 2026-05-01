@@ -1,0 +1,4 @@
+table,column,null_count,null_rate
+order_items,promo_id_2,714463,0.9997117546724428
+order_items,promo_id,438353,0.6133650683043479
+promotions,applicable_category,40,0.8

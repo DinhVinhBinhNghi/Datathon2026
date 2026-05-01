@@ -1,0 +1,6 @@
+feature_group,model_a_2013_2018_pct,model_b_2019_2022_pct,method
+Seasonal medians,66,64,LightGBM gain
+Data-derived flags,13,14,LightGBM gain
+Calendar basics,9,9,LightGBM gain
+Fourier,8,8,LightGBM gain
+AUX aggregates,4,5,LightGBM gain

@@ -1,0 +1,7 @@
+join_name,left_rows,right_rows,output_rows,growth_vs_left,left_key,right_key,expected,status,note
+orders_payments,646945,646945,646945,1.0,order_id,order_id,1:1,PASS,
+items_orders,714669,646945,714669,1.0,order_id,order_id,m:1,PASS,
+items_products,714669,2412,714669,1.0,product_id,product_id,m:1,PASS,
+orders_customers,646945,121930,646945,1.0,customer_id,customer_id,m:1,PASS,
+orders_geography,646945,39948,646945,1.0,zip,zip,m:1,PASS,
+orders_shipments,646945,566067,646945,1.0,order_id,order_id,1:0/1,PASS,

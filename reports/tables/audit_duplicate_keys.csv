@@ -1,0 +1,9 @@
+table,keys,status,duplicate_rows
+products,product_id,PASS,0
+customers,customer_id,PASS,0
+promotions,promo_id,PASS,0
+geography,zip,PASS,0
+orders,order_id,PASS,0
+payments,order_id,PASS,0
+returns,return_id,PASS,0
+reviews,review_id,PASS,0

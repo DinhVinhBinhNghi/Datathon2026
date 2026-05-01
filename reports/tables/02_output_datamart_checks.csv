@@ -1,0 +1,7 @@
+file,rows,cols,key,duplicate_key_rows,expected_unique,status
+data\interim\1_fact_order_item_enriched.csv,714669,47,"order_id, product_id",16,False,PASS
+data\interim\2_fact_order_enriched.csv,646945,30,order_id,0,True,PASS
+data\marts\3_customer_360.csv,121930,16,customer_id,0,True,PASS
+data\marts\4_product_360.csv,2412,22,product_id,0,True,PASS
+data\marts\5_daily_business_panel.csv,3833,19,Date,0,True,PASS
+data\marts\6_product_month_panel.csv,60247,27,"snapshot_date, product_id",0,True,PASS
